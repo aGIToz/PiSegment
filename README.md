@@ -4,11 +4,17 @@ backend for a web app.
 
 # Video
 
+
 # Results
 
-| Image     | Mask |
+| Image w annotation    | Segmentation |
 | ----------- | ----------- |
-|<img src="./data/lincoln.png" alt="org_img" width="320" height="390">   | <img src="./data/mask.png" alt="mask" width="320" height="390">    |
+|<img src="./imgs/combined_tan.png" alt="org_img" width="250" height="150">   | <img src="./imgs/seg_image_tan.png" alt="segmented" width="250" height="150">    |
+|<img src="./imgs/combined_tap.png" alt="org_img" width="250" height="150">   | <img src="./imgs/seg_image_tap.png" alt="segmented" width="250" height="150">    |
+
+| Segment 1   | Segment 2 |
+| ----------- | ----------- |
+|<img src="./imgs/seg_4_tap.png" alt="org_img" width="250" height="150">   | <img src="./imgs/seg_3_tap.png" alt="segmented" width="250" height="150">    |
 
 
 # Installation
@@ -20,8 +26,6 @@ pip install pisegment
 - Command line
 ```
 pisegment --input "path/to/image/tobe/segmented" --mask "path/to/the/generated/annotation"
-
-# pisegment --input "path..." --mask "path..." --ps 3 --k 4 --k_ 10 --sig 1.00e-2 --no_filter
 ```
 
 # Tips on using
