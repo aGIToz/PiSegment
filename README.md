@@ -34,6 +34,20 @@ pisegment --input "path/.." --mask "path/.." --no_filter
 - For fast processing, consider downsizing your image under 256 X 256 to generate the segmented mask, then upscale the segmeted mask to the original size.
 - For very complex images, like the 2nd example in the **Results**, the parameter `--sig` plays a crucial role. See the **Jupyter_demo** for the workflow to segment such kind of images.
 
-# How it works
+# How it works?
+Behind the scene it is basically using a Dijkstra like algorithm to propagate the labels on graphs. The code is very similar to the Algorithm 2 of the following paper: https://hal.science/hal-00932510/document
 
-# Param description
+# Params description
+The following description of paramters is useful for getting a good segmentation.
+
+| Param | Description |
+| --- | --- |
+| sig | An important paramter for getting good segmentation on complex images (see **Jupyter_demo**). By default I am using a naive estimtation of this paramter which may need to be finetuned |
+| no_filter | Turns off the denoising|
+| ps | Patch size, it is used for creating a non-local knn graph for denoising. The default value is 3 which should be fine.|
+| k_ | The $k$ value in knn graph for denoising. The default is 10 |
+| k | The image grid graph $k$ value. 4 or 8 should be fine. The default is 4 |
+```bash
+pisegment --input "path/.." --mask "path/.." --sig 1.00e-02  --k 4 --k_ 10 --ps 3 --no_filter
+```
+
