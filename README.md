@@ -27,6 +27,12 @@ pisegment --input "path/to/image/tobe/segmented" --mask "path/to/the/generated/a
 ```
 
 # Tips on using
+- By default the denoising filter is on. If your image doesn't have noise, turn if off using `--no_filter` option. You may also use this option if you are already using some different software for denoising. 
+```bash
+pisegment --input "path/.." --mask "path/.." --no_filter
+```
+- For fast processing, consider downsizing your image under 256 X 256 to generate the segmented mask, then upscale the segmeted mask to the original size.
+- For very complex images, like the 2nd example in the **Results**, the parameter `--sig` plays a crucial role. See the **Jupyter_demo** for the workflow to segment such kind of images.
 
 # How it works
 
