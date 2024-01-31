@@ -25,28 +25,27 @@ pip install pisegment
 ```
 pisegment --input "path/to/image/tobe/segmented" --mask "path/to/the/generated/annotation"
 ```
-
-# Tips on using
-- By default the denoising filter is on. If your image doesn't have noise, turn if off using `--no_filter` option. You may also use this option if you are already using some different software for denoising. 
+# Tips on using:
+- By default, the denoising filter is on. If your image doesn't have noise, turn it off using the `--no_filter` option. You may also use this option if you are already using different software for denoising.
 ```bash
 pisegment --input "path/.." --mask "path/.." --no_filter
 ```
-- For fast processing, consider downsizing your image under 256 X 256 to generate the segmented mask, then upscale the segmeted mask to the original size.
-- For very complex images, like the 2nd example in the **Results**, the parameter `--sig` plays a crucial role. See the **Jupyter_demo** for the workflow to segment such kind of images.
+- For fast processing, consider downsizing your image to under 256 X 256 to generate the segmented mask, then upscale the segmented mask to the original size.
+- For very complex images, like the 2nd example in the **Results**, the parameter `--sig` plays a crucial role. See the **Jupyter_demo** for the workflow to segment such kinds of images.
 
 # How it works?
 Behind the scene it is basically using a Dijkstra like algorithm to propagate the labels on graphs. The code is very similar to the Algorithm 2 of the following paper: https://hal.science/hal-00932510/document
 
-# Params description
-The following description of paramters is useful for getting a good segmentation.
+# Params Description
+The following description of parameters is useful for achieving good segmentation.
 
 | Param | Description |
 | --- | --- |
-| sig | An important paramter for getting good segmentation on complex images (see **Jupyter_demo**). By default I am using a naive estimtation of this paramter which may need to be finetuned |
-| no_filter | Turns off the denoising|
-| ps | Patch size, it is used for creating a non-local knn graph for denoising. The default value is 3 which should be fine.|
-| k_ | The $k$ value in knn graph for denoising. The default is 10 |
-| k | The image grid graph $k$ value. 4 or 8 should be fine. The default is 4 |
+| sig | An important parameter for achieving good segmentation on complex images (see **Jupyter_demo**). By default, I am using a naive estimation of this parameter which may need to be fine-tuned. |
+| no_filter | Turns off the denoising. |
+| ps | Patch size, used for creating a non-local kNN graph for denoising. The default value is 3, which should be fine. |
+| k_ | The $k$ value in the kNN graph for denoising. The default is 10. |
+| k | The image grid graph $k$ value. 4 or 8 should be sufficient. The default is 4. |
 ```bash
 pisegment --input "path/.." --mask "path/.." --sig 1.00e-02  --k 4 --k_ 10 --ps 3 --no_filter
 ```
