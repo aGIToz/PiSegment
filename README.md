@@ -6,6 +6,11 @@ backend for a web app.
 
 # Results
 
+| Image     | Mask |
+| ----------- | ----------- |
+|<img src="./data/lincoln.png" alt="org_img" width="320" height="390">   | <img src="./data/mask.png" alt="mask" width="320" height="390">    |
+
+
 # Installation
 ```
 pip install pisegment
@@ -15,6 +20,8 @@ pip install pisegment
 - Command line
 ```
 pisegment --input "path/to/image/tobe/segmented" --mask "path/to/the/generated/annotation"
+
+# pisegment --input "path..." --mask "path..." --ps 3 --k 4 --k_ 10 --sig 1.00e-2 --no_filter
 ```
 
 # Tips on using
