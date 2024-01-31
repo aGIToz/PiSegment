@@ -117,12 +117,6 @@ class Segmentation:
         end = time()
         print("Time taken for filtering:", end-start)
 
-    def vis_nlm(self):
-        self.new = to_img(self.texture, self.img.shape)
-        self.new = (self.new - np.min(self.new) ) / (np.max(self.new) - np.min(self.new))
-        plt.imshow(self.new, cmap="gray")
-        plt.show()
-
     def estimate_sig(self):
         self.best_sig = 0
         self.max_std = 0

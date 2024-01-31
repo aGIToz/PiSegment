@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pisegment',
-    version='0.1',
+    version='0.3',
     description='Light weight semi-supervised image segmentation tool in python.',
     author='Amitoz Azad',
     url='https://github.com/aGIToz/PiSegment',
