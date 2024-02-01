@@ -1,9 +1,12 @@
 # PiSegment
 A lightweight Python software for semi-supervised segmentation on images, it can be utilized for tasks such as image segmentation, background extraction, semantic segmentation, colorization, etc. The code, written in pure Python, can be easily integrated with Flask or Django backend for a web app.
+
 # Video
+https://github.com/aGIToz/PiSegment/assets/38216671/97f3ea98-2433-4aba-b195-e5ca67d2624a
 
 
 # Results
+
 
 | Image w annotation    | Segmentation |
 | ----------- | ----------- |
