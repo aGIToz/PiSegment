@@ -27,6 +27,8 @@ pip install pisegment
 ```
 pisegment --input "path/to/image/tobe/segmented" --mask "path/to/the/generated/annotation"
 ```
+- The above command opens up a GUI for image annotation. **Use right click drag for annotation. There are 9 different color options. Press `1` for black color, `2` for blue color and so on. After annotating, press `s` to let the segmentation begin**. Zoom in/out with mouse wheel and left click drag for panning image.
+
 # Tips on using:
 - By default, the denoising filter is on. If your image doesn't have noise, turn it off using the `--no_filter` option. You may also use this option if you are already using different software for denoising.
 ```bash
