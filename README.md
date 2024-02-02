@@ -41,7 +41,7 @@ pisegment --input "path/.." --mask "path/.." --no_filter
 - For complex images, like the last example in the **Results**, to get a precise segmentation, the parameter `--sig` plays a crucial role. See the **Jupyter_demo** for the workflow on how to segment such kind of images.
 
 # How it works?
-Behind the scene it is basically using a Dijkstra like algorithm to propagate the labels on graphs. The code is very similar to the Algorithm 2 of the following paper: https://hal.science/hal-00932510/document
+Behind the scenes, it is basically using a Dijkstra like algorithm to propagate the labels on graphs. The code is very similar to the Algorithm 2 of the following paper: https://hal.science/hal-00932510/document
 
 # Params Description
 The following description of parameters is useful for achieving good segmentation.
